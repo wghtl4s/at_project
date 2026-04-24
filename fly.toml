@@ -1,30 +1,25 @@
-# fly.toml app configuration file generated for at-project on 2026-04-24T13:12:25Z
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
-
-app = 'at-project'
-primary_region = 'ams'
+app = "at-project"
+primary_region = "ams"
 
 [build]
 
-2. [http_service]
+[http_service]
   internal_port = 8080
   force_https = true
   auto_start_machines = true
   auto_stop_machines = true
   min_machines_running = 1
-  processes = ['app']
+  processes = ["app"]
+
   [http_service.checks]
     grace_period = "10s"
     interval = "15s"
     timeout = "2s"
     method = "GET"
-    path = "/health"куди мені це додавати?  в який блок? ну я ж казаоа мені конкретно казати все.
-
+    path = "/health"
 
 [[vm]]
-  memory = '1gb'
-  cpu_kind = 'shared'
+  memory = "1gb"
+  cpu_kind = "shared"
   cpus = 1
   memory_mb = 256
