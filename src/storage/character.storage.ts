@@ -1,6 +1,6 @@
 import { CharacterModel } from '../models/character.model';
 import { CreateCharacterInput, UpdateCharacterInput } from '../schemas/character.schema';
-const x: number = "text";
+const x: number = 123;
 interface GetAllParams {
     species?: string;
     kingdom?: string;
@@ -8,7 +8,7 @@ interface GetAllParams {
     page?: number;
     limit?: number;
 }
-git add .
+
 export const characterStorage = {
     async getAll(params: GetAllParams) {
         const { species, kingdom, sortBy = 'createdAt', page = 1, limit = 10 } = params;
