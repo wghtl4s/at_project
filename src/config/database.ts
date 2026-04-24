@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 
 export async function connectDB() {
-    const uri = process.env.MONGODB_URI;
+    const uri = process.env.MONGO_URL;
 
     if (!uri) {
-        console.error('МОНГОДБ не знайдено у файлі .env');
-        process.exit(1);
+        console.error('MONGODB_URI is missing (check Fly secrets)');
+        return;
     }
 
     await mongoose.connect(uri);
